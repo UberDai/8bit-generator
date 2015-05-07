@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/04 21:44:13 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/07 02:52:14 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/08 00:05:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ typedef struct		s_wav
 	short			nb_channel; // 1 = mono, 2 = stereo
 	int				sample_rate; // ex: 44100
 	int				stuff; // sample_rate * (bit_per_sample / 8) ?
-	short			other_stuff;
+	short			bytes_per_frame;
 	short			bit_per_sample; // 8 bits or 16 bits, ...
 	char			data_header[4]; // separator for data, always "data"
 	int				data_size; // data length
-	unsigned char	data[]; // data
+	short			data[]; // data
 }					t_wav;
 
 void	die(const char *message);
