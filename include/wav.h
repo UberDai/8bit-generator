@@ -6,12 +6,27 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/04 21:44:13 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/08 00:05:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/08 04:29:07 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WAV_H
 # define WAV_H
+
+typedef enum		e_timbre
+{
+	SIN,
+	SAWTOOTH,
+	SQUARE
+}					t_timbre;
+
+typedef struct		s_sound
+{
+	int				pitch;
+	float			volume;
+	t_timbre		timbre;
+	float			duration;
+}					t_sound;
 
 typedef struct		s_wav
 {
@@ -35,5 +50,6 @@ void	die(const char *message);
 void	play_file(t_wav *file);
 void	print_wave(const t_wav *file);
 void	print_file(const t_wav *file);
+int		generate_sound(t_wav *file, t_sound *params, short **data);
 
 #endif

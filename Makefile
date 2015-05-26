@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/06 23:34:52 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/08 04:28:42 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ BIN_DIR		=	bin/
 NAME		=	wav
 BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
+				generator/generator.c \
 				player.c \
 				util.c
 
